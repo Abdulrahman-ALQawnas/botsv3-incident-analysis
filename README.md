@@ -246,8 +246,8 @@ index=botsv3 sourcetype=aws:cloudtrail (putbucketacl OR "put-bucket-acl")
 ### ab45689d-69cd-41e7-8705-5350402cf7ac
 ## Evidence
 ![Event ID confirming public S3 access]( screenshots/screenshots/aws/q204_1.png)
-![Event ID confirming public S3 access]( screenshots/aws/q204_2.png)
-![Event ID confirming public S3 access]( screenshots/aws/q204_3.png) 
+![Event ID confirming public S3 access]( screenshots/screenshots/aws/q204_2.png)
+![Event ID confirming public S3 access]( screenshots/screenshots/aws/q204_3.png) 
 ### Event ID confirming public S3 access
 ________________________________________
 
