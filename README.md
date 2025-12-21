@@ -50,7 +50,7 @@ After verifying the email address, the GitHub account is ready for use.
 ________________________________________
 ## Creating a New Repository
 After logging in, a new repository is created by clicking the “+” icon and selecting New repository.
-![New repository]( screenshots/github-setup/github1.png)
+![New repository]( screenshots/screenshots/github-setup/github1.png)
 The repository is named botsv3-incident-analysis.
 Visibility is set to Public to allow clients and recruiters to view the project.
 The option “Add a README file” is selected to initialize documentation.
