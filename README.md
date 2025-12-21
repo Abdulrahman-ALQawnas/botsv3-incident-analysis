@@ -55,7 +55,6 @@ The repository is named botsv3-incident-analysis.
 Visibility is set to Public to allow clients and recruiters to view the project.
 The option “Add a README file” is selected to initialize documentation.
 ![botsv3-incident-analysis]( screenshots/screenshots/github-setup/github2.png)
-![botsv3-incident-analysis]( screenshots/screenshots/github-setup/github3.png)
 This repository becomes the central project folder for all analysis, screenshots, and findings.
 ________________________________________
 # SOC Roles & Incident Handling Reflection 
