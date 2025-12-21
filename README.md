@@ -132,7 +132,7 @@ Successful ingestion was verified by running searches against the botsv3 index a
 ## 1.	Open this link in your browser:
 https://github.com/splunk/botsv3
 Click Code → Download ZIP 
-![Direct ZIP Download via Browser](screenshots/screenshots/botsv3ingestion/dataset1.png)
+![Direct ZIP Download via Browser](screenshots/screenshots/botsv3-ingestion/dataset1.png)
 ## 2.	Save the ZIP file somewhere on your VM, e.g.:
 Mkdir botsv3_project
 
