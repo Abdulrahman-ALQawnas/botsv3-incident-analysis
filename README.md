@@ -54,8 +54,8 @@ After logging in, a new repository is created by clicking the “+” icon and s
 The repository is named botsv3-incident-analysis.
 Visibility is set to Public to allow clients and recruiters to view the project.
 The option “Add a README file” is selected to initialize documentation.
-![botsv3-incident-analysis]( screenshots/github-setup/github2.png)
-![botsv3-incident-analysis]( screenshots/github-setup/github3.png)
+![botsv3-incident-analysis]( screenshots/screenshots/github-setup/github2.png)
+![botsv3-incident-analysis]( screenshots/screenshots/github-setup/github3.png)
 This repository becomes the central project folder for all analysis, screenshots, and findings.
 ________________________________________
 # SOC Roles & Incident Handling Reflection 
@@ -87,18 +87,18 @@ ________________________________________
 ## 2. Download Splunk Free
 Go to the official Splunk download page: https://www.splunk.com/en_us/download/splunk-enterprise.html
 ●	Select Linux → 64-bit .deb package.
-![Select Linux → 64-bit .deb package]( screenshots/splunk/splunk1.png)
+![Select Linux → 64-bit .deb package]( screenshots/screenshots/splunk/splunk1.png)
 ●	Copy the download link, then run:
 wget -O splunk-10.0.2-e2d18b4767e9-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/10.0.2/linux/splunk-10.0.2-e2d18b4767e9-linux-amd64.deb"
 ### Explanation:
 This downloads the Splunk installation package to your VM.
-![downloads the Splunk installation package](screenshots/splunk/splunk2.png)
+![downloads the Splunk installation package](screenshots/screenshots/splunk/splunk2.png)
 ________________________________________
 
 ## 3. Install Splunk
 ### Explanation:
 This installs Splunk on your Ubuntu system using the Debian package manager.
- ![installs Splunk]( screenshots/splunk/splunk3.png)
+ ![installs Splunk]( screenshots/screenshots/splunk/splunk3.png)
 ________________________________________
 
 ## 4. Start Splunk for the first time
@@ -106,13 +106,13 @@ sudo /opt/splunk/bin/splunk start --accept-license
 
 ●	You will be prompted to create an admin username and password.
 ●	Make note of these credentials as you will need them to log in.
-![Start Splunk for the first time]( screenshots/splunk/splunk4.png)
-![splunk interface]( screenshots/splunk/splunk5.png)
+![Start Splunk for the first time]( screenshots/screenshots/splunk/splunk4.png)
+![splunk interface]( screenshots/screenshots/splunk/splunk5.png)
 ________________________________________
 
 ## 5. Enable Splunk to start on boot (optional)
 sudo /opt/splunk/bin/splunk enable boot-start
-![Enable Splunk to start on boot]( screenshots/splunk/splunk6.png)
+![Enable Splunk to start on boot]( screenshots/screenshots/splunk/splunk6.png)
 ________________________________________
 
 ## 6. Access Splunk Web Interface
@@ -120,8 +120,8 @@ Open your web browser and go to:
 http://<YOUR_VM_IP>:8000
 
 ●	Login using the admin username and password you set earlier.
-![Access Splunk Web Interface]( screenshots/splunk/splunk7.png)
-![gui interface]( screenshots/splunk/splunk8.png)
+![Access Splunk Web Interface]( screenshots/screenshots/splunk/splunk7.png)
+![gui interface]( screenshots/screenshots/splunk/splunk8.png)
 ________________________________________
 
 
@@ -132,14 +132,14 @@ Successful ingestion was verified by running searches against the botsv3 index a
 ## 1.	Open this link in your browser:
 https://github.com/splunk/botsv3
 Click Code → Download ZIP 
-![Direct ZIP Download via Browser](screenshots/botsv3ingestion/dataset1.png)
+![Direct ZIP Download via Browser](screenshots/screenshots/botsv3ingestion/dataset1.png)
 ## 2.	Save the ZIP file somewhere on your VM, e.g.:
 Mkdir botsv3_project
 
 ## 4.	Open a terminal and unzip the file:
        cd ~/botsv3_project
-![Save the ZIP file]( screenshots/botsv3-ingestion/dataset2.png)
-![extract]( screenshots/botsv3-ingestion/dataset3.png)
+![Save the ZIP file]( screenshots/screenshots/botsv3-ingestion/dataset2.png)
+![extract]( screenshots/screenshots/botsv3-ingestion/dataset3.png)
 ________________________________________
  
 ## Step 2: Delete any wrong folder in Splunk apps (if exists)
@@ -152,16 +152,16 @@ Ls
 ●	Verify deletion:
 
        ls
-![Go to Splunk apps folder]( screenshots/botsv3-ingestion/dataset4.png)
+![Go to Splunk apps folder]( screenshots/screenshots/botsv3-ingestion/dataset4.png)
 ________________________________________
 
 ## Step 3: Copy the correct pre-indexed dataset into Splunk
 Copy botsv3_data_set folder into Splunk apps:
 sudo cp -r /home/ubuntu/Downloads/botsv3/botsv3_data_set /opt/splunk/etc/apps/
-![Copy botsv3_data_set folder into Splunk apps](screenshots/botsv3ingestion/dataset5.png)
+![Copy botsv3_data_set folder into Splunk apps](screenshots/screenshots/botsv3ingestion/dataset5.png)
 ●	You should see botsv3_data_set among other apps.
 ●	Inside it, you should see folders like default/, local/, metadata/.
-![ls]( screenshots/botsv3-ingestion/dataset6.png)
+![ls]( screenshots/screenshots/botsv3-ingestion/dataset6.png)
 ________________________________________
 
 ## Step 4: Restart Splunk
@@ -171,8 +171,8 @@ sudo /opt/splunk/bin/splunk restart
 ●	Wait a minute.
 
 ●	Open Splunk Web: http://localhost:8000
-![retsart splunk]( screenshots/botsv3-ingestion/dataset7.png)
-![go to manage apps]( screenshots/botsv3-ingestion/dataset8.png)
+![retsart splunk]( screenshots/screenshots/botsv3-ingestion/dataset7.png)
+![go to manage apps]( screenshots/screenshots/botsv3-ingestion/dataset8.png)
 ________________________________________
 
 
@@ -203,7 +203,7 @@ index=botsv3 sourcetype=aws:cloudtrail userIdentity.type=IAMUser
 ## Answer
 ### bstoll, btun, splunk_access, web_admin
 ## Evidence
-![IAM users accessing AWS services](screenshots/aws/q200.png)
+![IAM users accessing AWS services](screenshots/screenshots/aws/q200.png)
 ### IAM users accessing AWS services
 ________________________________________
 
@@ -217,8 +217,8 @@ index=botsv3 sourcetype=aws:cloudtrail eventType=AwsApiCall
 ## Answer
 ### userIdentity.sessionContext.attributes.mfaAuthenticated
 ## Evidence
-![MFA authentication field highlighted]( screenshots/aws/q201_1.png)
-![MFA authentication field highlighted]( screenshots/aws/q201_2.png)
+![MFA authentication field highlighted]( screenshots/screenshots/aws/q201_1.png)
+![MFA authentication field highlighted]( screenshots/screenshots/aws/q201_2.png)
  ### MFA authentication field highlighted
 ________________________________________
 
@@ -232,7 +232,7 @@ index=botsv3 sourcetype=hardware
 ## Answer
 ### E5-2676
 ## Evidence
-![CPU type field showing Intel Xeon E5-2676]( screenshots/aws/q202.png)
+![CPU type field showing Intel Xeon E5-2676]( screenshots/screenshots/aws/q202.png)
 ### CPU type field showing Intel Xeon E5-2676
 ________________________________________
 
@@ -245,7 +245,7 @@ index=botsv3 sourcetype=aws:cloudtrail (putbucketacl OR "put-bucket-acl")
 ## Answer
 ### ab45689d-69cd-41e7-8705-5350402cf7ac
 ## Evidence
-![Event ID confirming public S3 access]( screenshots/aws/q204_1.png)
+![Event ID confirming public S3 access]( screenshots/screenshots/aws/q204_1.png)
 ![Event ID confirming public S3 access]( screenshots/aws/q204_2.png)
 ![Event ID confirming public S3 access]( screenshots/aws/q204_3.png) 
 ### Event ID confirming public S3 access
@@ -262,7 +262,7 @@ index=botsv3 sourcetype=aws:cloudtrail (putbucketacl OR "put-bucket-acl")
 ### bstoll
 ## Evidence
 
-![userName field showing bstoll]( screenshots/aws/q205.png)
+![userName field showing bstoll]( screenshots/screenshots/aws/q205.png)
 ### userName field showing bstoll
 ________________________________________
 
@@ -287,7 +287,7 @@ index=botsv3 sourcetype=aws:s3:accesslogs bucket_name=frothlywebcode operation="
 ## Answer
 ### OPEN_BUCKET_PLEASE_FIX.txt
 ## Evidence
-![Uploaded file name in S3 access logs]( screenshots/aws/q207.png) 
+![Uploaded file name in S3 access logs]( screenshots/screenshots/aws/q207.png) 
 ### Uploaded file name in S3 access logs
 ________________________________________
 
@@ -304,8 +304,8 @@ index=botsv3 sourcetype=wineventlog BSTOLL-L
 ### Answer
 BSTOLL-L.froth.ly
 ## Evidence
-![OS comparison and FQDN identification]( screenshots/aws/q208.png)
-![OS comparison and FQDN identification]( screenshots/aws/q208_1.png)
+![OS comparison and FQDN identification]( screenshots/screenshots/aws/q208.png)
+![OS comparison and FQDN identification]( screenshots/screenshots/aws/q208_1.png)
 ### OS comparison and FQDN identification
 ________________________________________
 
@@ -320,7 +320,7 @@ index=botsv3 sourcetype="Perfmon:Process" process_cpu_used_percent=100
 ## Answer
 ### chrome#5
 ## Evidence
-![CPU utilization timeline]( screenshots/aws/q209.png)
+![CPU utilization timeline]( screenshots/screenshots/aws/q209.png)
 ### CPU utilization timeline
 ________________________________________
 
@@ -343,7 +343,7 @@ index=botsv3 sourcetype="symantec:ep:security:file"
 ## Answer
 ### 30358
 Evidence
-![Earliest signature ID]( screenshots/aws/q211.png)
+![Earliest signature ID]( screenshots/screenshots/aws/q211.png)
 ### Earliest signature ID
 ________________________________________
 
@@ -358,7 +358,7 @@ index=botsv3 sourcetype="symantec:ep:security:file"
 ## Answer
 ### JSCoinminer Download 8
 ## Evidence
-![Attack name field]( screenshots/aws/q212.png)
+![Attack name field]( screenshots/screenshots/aws/q212.png)
 ### Attack name field
 ________________________________________
 
@@ -368,8 +368,8 @@ Severity information was obtained directly from the Symantec Endpoint Protection
 ## Answer
 ### Medium
 ## Evidence
-![Severity field]( screenshots/aws/q213_1.png)
-![Severity field]( screenshots/aws/q213_2.png)
+![Severity field]( screenshots/screenshots/aws/q213_1.png)
+![Severity field]( screenshots/screenshots/aws/q213_2.png)
 ### Severity field
 ________________________________________
 
@@ -384,7 +384,7 @@ index=botsv3 sourcetype="symantec:ep:security:file"
 ## Answer
 ### BTUN-L
 ## Evidence
-![Blocked attack confirmation]( screenshots/aws/q214.png)
+![Blocked attack confirmation]( screenshots/screenshots/aws/q214.png)
 ### Blocked attack confirmation
 ________________________________________
 
@@ -398,7 +398,7 @@ index=botsv3 sourcetype=aws:cloudtrail eventSource="iam.amazonaws.com" errorCode
 ## Answer
 ### AKIAJOGCDXJ5NW5PXUPA
 ## Evidence
-![Distinct error count by access key](screenshots/aws/q215.png) 
+![Distinct error count by access key](screenshots/screenshots/aws/q215.png) 
 ### Distinct error count by access key
 ________________________________________
 
@@ -412,7 +412,7 @@ index=botsv3 sourcetype="stream:smtp" bstoll@froth.ly *aws* *case*
 ## Answer
 ### 5244329601
 ## Evidence
-![AWS support email](screenshots/aws/q216.png) 
+![AWS support email](screenshots/screenshots/aws/q216.png) 
 ### AWS support email
 ________________________________________
 
@@ -422,7 +422,7 @@ The AWS notification referenced an external repository containing exposed creden
 ## Answer
 ### Bx8/gTsYC98T0oWiFhpmdROqhELPtXJSR9vFPNGk
 ## Evidence
-![Leaked secret key](screenshots/aws/q217.png) 
+![Leaked secret key](screenshots/screenshots/aws/q217.png) 
 ### Leaked secret key
 ________________________________________
 
@@ -435,7 +435,7 @@ index=botsv3 sourcetype=aws:cloudtrail userIdentity.accessKeyId=AKIAJOGCDXJ5NW5P
 ## Answer
 ### nullweb_admin
 ## Evidence
-![Unauthorized CreateAccessKey attempt](screenshots/aws/q218.png)
+![Unauthorized CreateAccessKey attempt](screenshots/screenshots/aws/q218.png)
 ### Unauthorized CreateAccessKey attempt
 ________________________________________
 
@@ -448,7 +448,7 @@ index=botsv3 sourcetype=aws:cloudtrail userIdentity.accessKeyId=AKIAJOGCDXJ5NW5P
 ## Answer
 ### ElasticWolf/5.1.6
 ## Evidence
-![User agent field](screenshots/aws/q219.png) 
+![User agent field](screenshots/screenshots/aws/q219.png) 
 ### User agent field
 
 ________________________________________
