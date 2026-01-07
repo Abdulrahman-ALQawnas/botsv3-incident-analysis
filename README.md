@@ -35,25 +35,6 @@ The objective of this project is to perform a complete SOC-style investigation u
 The scope includes Splunk installation, dataset ingestion, SPL-based analysis, and investigation of cloud security incidents, identity misuse, and endpoint compromise. Live response and remediation actions are outside the scope.
 It is assumed that all logs in the dataset are accurate and complete. The investigation is performed from a post-incident perspective, similar to how SOC analysts reconstruct events after alerts are triggered.
 ________________________________________
-# GitHub Project Setup
-## What is GitHub?
-GitHub is an online platform used to store projects and track changes over time. It acts as an online folder combined with version history, allowing work to be shared, reviewed, and presented professionally.
-In this project, GitHub is used to showcase SOC investigation skills, maintain structured documentation, and provide transparency through version-controlled commits.
-________________________________________
-## Creating a GitHub Account
-To begin, a GitHub account is created by visiting https://github.com and selecting Sign Up.
-An email address, password, and username are provided. The username is chosen professionally, as it becomes part of the public project URL.
-After verifying the email address, the GitHub account is ready for use.
-________________________________________
-## Creating a New Repository
-After logging in, a new repository is created by clicking the “+” icon and selecting New repository.
-![New repository]( screenshots/screenshots/github-setup/github1.png)
-The repository is named botsv3-incident-analysis.
-Visibility is set to Public to allow clients and recruiters to view the project.
-The option “Add a README file” is selected to initialize documentation.
-![botsv3-incident-analysis]( screenshots/screenshots/github-setup/github2.png)
-This repository becomes the central project folder for all analysis, screenshots, and findings.
-________________________________________
 # SOC Roles & Incident Handling Reflection 
 # SOC Roles Reflected in This Project
 This project closely mirrors the responsibilities of a Tier-2 SOC Analyst. Rather than simply responding to alerts, the analysis involves correlating logs across cloud, endpoint, and security platforms to understand the full scope of incidents.
