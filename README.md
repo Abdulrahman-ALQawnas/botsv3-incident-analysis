@@ -6,9 +6,6 @@ Explore a complete Security Operations Center (SOC) investigation of the Frothly
 - Security Operations Center (SOC) overview
 - BOTSv3 dataset overview
 - Project objectives, scope, and assumptions
-## ●	GitHub Project Setup
-- What GitHub is
-- Creating a GitHub account
 ##  ●	SOC Roles & Incident Handling Reflection
 - SOC analyst responsibilities reflected in this project
 - Incident response lifecycle applied to findings
